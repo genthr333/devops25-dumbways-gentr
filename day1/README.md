@@ -5,13 +5,15 @@ Day 1 — Instalasi Ubuntu Server
 ---
 
 ## Langkah 1 — Buat VM
-**Deskripsi singkat:** Buat VM baru di VirtualBox dengan setting dasar.
+**Deskripsi singkat:** Buat VM baru di VirtualBox.
   
 **Screenshot:**  
 <p align="center">
   <img src="step1.png" width="700" alt="Buat VM">
+  <img src="step2.png" width="700" alt="Buat VM">
+  <img src="step3.png" width="700" alt="Buat VM">
 </p>
-**Keterangan:** Ganti nama VM sesuai kebutuhan.
+**Keterangan:** Masukan nama VM, lalu pastikan VM folder sama, dan pilih ISO image. setelah itu uncheck box unattended installation
 
 ---
 
