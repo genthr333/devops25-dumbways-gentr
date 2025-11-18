@@ -9,9 +9,9 @@ Day 1 — Instalasi Ubuntu Server
   
 **Screenshot:**  
 <p align="center">
-  <img src="step1.png" width="700" alt="Buat VM">
-  <img src="step2.png" width="700" alt="Buat VM">
-  <img src="step3.png" width="700" alt="Buat VM">
+  <img src="step1.png" width="250" alt="Buat VM">
+  <img src="step2.png" width="250" alt="Buat VM">
+  <img src="step3.png" width="250" alt="Buat VM">
 </p>
 **Keterangan:** Masukan nama VM, lalu pastikan VM folder sama, dan pilih ISO image. setelah itu uncheck box unattended installation
 
