@@ -9,7 +9,7 @@ Day 1 — Instalasi Ubuntu Server
   
 **Screenshot:**  
 <p align="center">
-  <img src="day1/step1.png" width="700" alt="Buat VM">
+  <img src="step1.png" width="700" alt="Buat VM">
 </p>
 **Keterangan:** Ganti nama VM sesuai kebutuhan.
 
