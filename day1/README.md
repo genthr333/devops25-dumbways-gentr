@@ -34,13 +34,13 @@ Day 1 — Instalasi Ubuntu Server
   
 **Screenshot:**  
 <p align="center">
-  <img src="step6.png" width="150" alt="Buat VM">
-  <img src="step7.png" width="150" alt="Buat VM">
-  <img src="step8.png" width="150" alt="Buat VM">
-  <img src="step9.png" width="150" alt="Buat VM">
-  <img src="step10.png" width="150" alt="Buat VM">
-  <img src="step11.png" width="150" alt="Buat VM">
-  <img src="step12.png" width="150" alt="Buat VM">
+  <img src="step6.png" width="300" alt="Buat VM">
+  <img src="step7.png" width="300" alt="Buat VM">
+  <img src="step8.png" width="300" alt="Buat VM">
+  <img src="step9.png" width="300" alt="Buat VM">
+  <img src="step10.png" width="300" alt="Buat VM">
+  <img src="step11.png" width="300" alt="Buat VM">
+  <img src="step12.png" width="300" alt="Buat VM">
 </p>
 **Keterangan:** Klik Tombol Start pada menu Vitrualbox untuk run ubuntu, ketika sudah running tekan enter pada text try or install ubuntu server, tunggu beberapa saat lalu pilih Bahasa yang akan digunakan, jika muncul menu installer update available pilih yang continue without update, klik enter pada konfigurasi keyboard default, dan pilih ubuntu server pada menu type installation
 
