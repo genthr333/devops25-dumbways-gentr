@@ -17,9 +17,31 @@ Day 1 — Instalasi Ubuntu Server
 
 ---
 
-## Langkah 2 — Setting RAM & CPU
-**Deskripsi singkat:** Atur RAM 2048 MB dan 2 CPU.
+## Langkah 2 — Atur RAM & CPU
+**Deskripsi singkat:** Menyesuaikan resource VM.
+  
+**Screenshot:**  
 <p align="center">
-  <img src="day-1/step-2-ram-cpu.png" width="700" alt="Set RAM dan CPU">
+  <img src="step4.png" width="250" alt="Buat VM">
+  <img src="step5.png" width="250" alt="Buat VM">
 </p>
-**Keterangan:** Minimal 2GB & 2 core.
+**Keterangan:** Tentukan resource VM minimal memory 2 GB dan Core yang digunakan 2, saya kemarin gagal diproses instalasi jika hanya menggunakan memory sebesar 1GB dan 1 core. lalu jika sudah klik next dan finish.
+
+---
+
+## Langkah 3 — Run Ubuntu
+**Deskripsi singkat:** Run ubuntu untuk melanjutkan prosess instalasi.
+  
+**Screenshot:**  
+<p align="center">
+  <img src="step6.png" width="150" alt="Buat VM">
+  <img src="step7.png" width="150" alt="Buat VM">
+  <img src="step8.png" width="150" alt="Buat VM">
+  <img src="step9.png" width="150" alt="Buat VM">
+  <img src="step10.png" width="150" alt="Buat VM">
+  <img src="step11.png" width="150" alt="Buat VM">
+  <img src="step12.png" width="150" alt="Buat VM">
+</p>
+**Keterangan:** Klik Tombol Start pada menu Vitrualbox untuk run ubuntu, ketika sudah running tekan enter pada text try or install ubuntu server, tunggu beberapa saat lalu pilih Bahasa yang akan digunakan, jika muncul menu installer update available pilih yang continue without update, klik enter pada konfigurasi keyboard default, dan pilih ubuntu server pada menu type installation
+
+---
