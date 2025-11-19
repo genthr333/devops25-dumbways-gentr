@@ -110,8 +110,10 @@ Day 1 — Instalasi Ubuntu Server
 **Screenshot:**  
 <p align="center">
   <img src="step19a.png" width="300" alt="Buat VM">
-  <img src="step19b.png" width="300" alt="Buat VM">
+  <img src="step19.png" width="300" alt="Buat VM">
 </p>
 **Keterangan:** Jika sudah bisa ngetik atau muncul menu login maka kita bisa coba login dan jika sudah berhasil masuk kita bisa mencoba melakukan ping ke google.com atau ke 8.8.8.8
 
 ---
+
+DevOps adalah sebuah metode kerja yang menggabungkan tim development  dan operations(tim server/infra) supaya bisa mempercepat proses kerja, dan membuat lebih stabil. tujuannya adanya devops adadlah membuat proses membuat aplikasi, mengupdate, deploy berjalan lebih cepat tanpa error atau bisa dibuat otomatis, focus kerja devops itu ada pada otomasi dan flow kerja CI/CD
