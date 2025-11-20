@@ -1,6 +1,6 @@
 Diagram Jaringan — Day 2
 Topologi Jaringan
-<p align="center"> <img src="diagram.png" width="700" alt="Diagram Jaringan"> </p>
+<p align="center"> <img src="network_diagram1.png" width="700" alt="Diagram Jaringan"> </p>
 Deskripsi Singkat
 
 Empat PC terhubung ke satu switch dalam satu subnet 192.168.11.0/28.
