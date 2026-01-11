@@ -4,7 +4,7 @@
 ##1. 
 
 
-<img width="391" height="641" alt="diagram1" src="https://github.com/user-attachments/assets/b3a789bf-d62d-49e8-8686-91809f63c01c" />
+<p align="center"> <img src="1.png" width="700" alt="command"> </p>
 
 
 
