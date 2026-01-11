@@ -1,7 +1,7 @@
 ## Day 2 CI/CD Jenkins
 
 
-##1 install Jenkins dan Docker 
+#1 install Jenkins dan Docker 
 
 
 Langkah 1
@@ -27,7 +27,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.
 sudo apt-get update, sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin untuk install docker
 
 
-##2 Setup docker files
+#2 Setup docker files
 
 
 langkah 1
@@ -60,7 +60,7 @@ Langkah 3
 buat file docker-compose di luar dari dir frontend dan backend. masukan backend, frontend, dan database ke dalam service supaya run di atas docker. pastikan context seusai dengan location docker file dan pada database password dan nama data base disesuaikan sama. lalu pastikan semua bisa diakses telebih dahulu dan backend terhubung dengan database.
 
 
-##3 setup jenkins file
+#3 setup jenkins file
 
 
 Langkah 1
@@ -88,7 +88,7 @@ Langkah 2
 buat jenkinsfile di dalam dir frontend
 
 
-##4 setup reverse proxy
+#4 setup reverse proxy
 
 
 Langkah 1
@@ -110,7 +110,7 @@ Langkah 2
 buat file reverse proxy untuk jenkins, backend, dan frontend. lalu gunakan ssl, dan pada bagian location tambahkan proxy_set_header X-Forwarded-Proto https;
 
 
-##5 configurasi jenkins
+#5 configurasi jenkins
 
 
 Langkah 1
