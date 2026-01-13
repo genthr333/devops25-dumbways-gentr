@@ -7,14 +7,14 @@
 Langkah 1
 
 
-<p alig"center"> <img src="1.png" widthn=="700" alt="command"> </p>
+<p alig"center"> <img src="1.PNG" widthn=="700" alt="command"> </p>
 
 
 Untuk mengerjakan tugas ansible saya menggunakan wsl untuk melakukan setup ansible playbook dan menjalankan ansible. intsall WSL di pc kalian dengan command wsl --install lalu wsl.exe --install --no-distribution. kemudian jika sudah terinstall kita akan menginstall distro ubuntu dengan menjalankan wsl --install -d ubuntu-22.04(masukan versi yang tersedia).
 
 
 <p align="center">
-  <img src="2.png" width="48%" />
+  <img src="2.PNG" width="48%" />
   <img src="3.png" width="48%" />
 </p>
 
