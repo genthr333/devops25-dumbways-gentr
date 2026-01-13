@@ -97,4 +97,68 @@ kita akan coba menjalankan frontend di atas docker
 </p>
 
 
-ansible akan menggunakan module git untuk clone rerpo dari githuhb ke folder tujuan yaitu app_dir. pada parameter force: yes ini agar memastikan jika ada perubahan lokal yang konflik, code dari remote tetap diutamakan. build docker image menggunakan modul community.docker.docker_image untuk melakukan proses build berdasarkan dockerfile, hasilnya di tulis dalam variable image_name.
+ansible akan menggunakan module git untuk clone rerpo dari githuhb ke folder tujuan yaitu app_dir. pada parameter force: yes ini agar memastikan jika ada perubahan lokal yang konflik, code dari remote tetap diutamakan. build docker image menggunakan modul community.docker.docker_image untuk melakukan proses build berdasarkan dockerfile, hasilnya di tulis dalam variable image_name. restart_policy: alwawys untuk membuat container nyala ketika server di reboot.
+
+
+## install node exporter dan prometheus
+
+
+### langkah 1
+
+
+<p alig"center"> <img src="14.png" widthn=="700" alt="command"> </p>
+
+
+node exporter berfungsi sebagai jembatan yang mengubah data  hardware seperti cpu, ram, disk, network menjadi format metrik yang bisa di baca oleh prometheus. image prom/node-exporter ini akan menggunakan imager resmi dari ekosistem prometheus. lalu untuk check metricnya bisa curl http://103.103.23.200:9100/metrics | head -n 20
+
+
+### langkah 2
+
+
+<p align="center">
+  <img src="15.png" width="48%" />
+  <img src="16.png" width="48%" />
+</p>
+
+
+kedua playbook ini (atau gabungan task ini) bertujuan untuk mendefinisikan bagaimana Prometheus berjalan dan target mana saja yang harus dipantau.
+volumes /opt/prometheus:/etc/prometheus ini adalah Bind Mount. Ansible memetakan folder di host /opt/prometheus ke dalam container /etc/prometheus. supaya file konfigurasi yang kita buat di server tetap tersimpan meskipun container dihapus atau direstart.
+Command --config.file akan memberitahu prometheus untuk membaca aturan monitoring dari file konfigurasi yang telah kita petakan di dalam volume.
+scrape_interval: 15s: Prometheus akan mengambil data metrik dari server setiap 15 detik sekali.
+scrape_configs: Bagian ini mendefinisikan target monitoring.
+
+
+<p alig"center"> <img src="14.png" widthn=="700" alt="command"> </p>
+
+
+pastikan status target up.
+
+
+## install grafana
+
+
+### langkah 1
+
+
+<p alig"center"> <img src="14.png" widthn=="700" alt="command"> </p>
+
+
+sama seperti instalasi sebelumnya ansible akan menarik image docker grafana/grafana, lalu run di port 3001.
+
+
+<p alig"center"> <img src="14.png" widthn=="700" alt="command"> </p>
+
+
+login menggunakan admin.
+
+
+<p alig"center"> <img src="14.png" widthn=="700" alt="command"> </p>
+
+
+connect data source dari prometheus ke dalam grafana dengan memilih prometheus.
+
+
+<p alig"center"> <img src="14.png" widthn=="700" alt="command"> </p>
+
+
+lalu buat dashboard di dalam grafana untuk monitoring, bisa juga import template.
