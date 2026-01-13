@@ -1,0 +1,8 @@
+- name: Step 1 - Dummy playbook test
+  hosts: all
+  become: true
+  tasks:
+    - name: Create test file
+      file:
+        path: /tmp/ansible-test.txt
+        state: touch

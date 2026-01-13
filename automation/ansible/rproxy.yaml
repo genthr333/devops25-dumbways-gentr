@@ -1,0 +1,98 @@
+- name: Reverse Proxy HTTPS (Cloudflare Full)
+  hosts: gateway
+  become: true
+
+  vars:
+    app_server_ip: "103.103.23.200"
+    frontend_port: "3000"
+    grafana_port: "3001"
+    prometheus_port: "9090"
+    nodeexporter_port: "9100"
+
+    ssl_cert: "/etc/ssl/cloudflare/origin.pem"
+    ssl_key: "/etc/ssl/cloudflare/origin.key"
+
+  tasks:
+    - name: Frontend HTTPS
+      copy:
+        dest: /etc/nginx/conf.d/frontend.conf
+        content: |
+          server {
+              listen 443 ssl;
+              server_name app-gen.studentdumbways.my.id;
+
+              ssl_certificate {{ ssl_cert }};
+              ssl_certificate_key {{ ssl_key }};
+
+              location / {
+                  proxy_pass http://{{ app_server_ip }}:{{ frontend_port }};
+                  proxy_set_header Host $host;
+                  proxy_set_header X-Real-IP $remote_addr;
+                  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                  proxy_set_header X-Forwarded-Proto https;
+              }
+          }
+
+    - name: Grafana HTTPS
+      copy:
+        dest: /etc/nginx/conf.d/grafana.conf
+        content: |
+          server {
+              listen 443 ssl;
+              server_name monitoring-gen.studentdumbways.my.id;
+
+              ssl_certificate {{ ssl_cert }};
+              ssl_certificate_key {{ ssl_key }};
+
+              location / {
+                  proxy_pass http://{{ app_server_ip }}:{{ grafana_port }};
+                  proxy_set_header Host $host;
+                  proxy_set_header X-Real-IP $remote_addr;
+                  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                  proxy_set_header X-Forwarded-Proto https;
+              }
+          }
+
+    - name: Prometheus HTTPS
+      copy:
+        dest: /etc/nginx/conf.d/prometheus.conf
+        content: |
+          server {
+              listen 443 ssl;
+              server_name prom-gen.studentdumbways.my.id;
+
+              ssl_certificate {{ ssl_cert }};
+              ssl_certificate_key {{ ssl_key }};
+
+              location / {
+                  proxy_pass http://{{ app_server_ip }}:{{ prometheus_port }};
+                  proxy_set_header Host $host;
+                  proxy_set_header X-Real-IP $remote_addr;
+                  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                  proxy_set_header X-Forwarded-Proto https;
+              }
+          }
+
+    - name: Node Exporter HTTPS
+      copy:
+        dest: /etc/nginx/conf.d/nodeexporter.conf
+        content: |
+          server {
+              listen 443 ssl;
+              server_name exporter-gen.studentdumbways.my.id;
+
+              ssl_certificate {{ ssl_cert }};
+              ssl_certificate_key {{ ssl_key }};
+
+              location / {
+                  proxy_pass http://{{ app_server_ip }}:{{ nodeexporter_port }};
+                  proxy_set_header Host $host;
+                  proxy_set_header X-Real-IP $remote_addr;
+                  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                  proxy_set_header X-Forwarded-Proto https;
+              }
+          }
+
+    - name: Reload nginx
+      command: systemctl reload nginx
+

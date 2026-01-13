@@ -1,0 +1,8 @@
+[app]
+app1 ansible_host=103.103.23.200
+
+[gateway]
+gateway1 ansible_host=103.150.226.149
+
+[monitoring]
+app1

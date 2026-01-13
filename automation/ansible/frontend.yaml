@@ -1,0 +1,39 @@
+- name: Deploy frontend app
+  hosts: app
+  become: true
+  vars:
+    app_dir: /opt/frontend
+    repo_url: https://github.com/FauzanPM/wayshub_fe.git
+    container_name: frontend
+    image_name: wayshubfe
+    app_port: 3000
+
+  tasks:
+    - name: Install git
+      apt:
+        name: git
+        state: present
+        update_cache: yes
+
+    - name: Clone frontend repository
+      git:
+        repo: "{{ repo_url }}"
+        dest: "{{ app_dir }}"
+        version: main
+        force: yes
+
+    - name: Build docker image
+      community.docker.docker_image:
+        name: "{{ image_name }}"
+        build:
+          path: "{{ app_dir }}"
+        source: build
+
+    - name: Run frontend container
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        image: "{{ image_name }}"
+        state: started
+        restart_policy: always
+        ports:
+          - "{{ app_port }}:{{ app_port }}"

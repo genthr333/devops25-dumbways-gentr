@@ -1,0 +1,22 @@
+- name: SSL with Certbot
+  hosts: gateway
+  become: true
+  tasks:
+    - name: Install certbot and nginx plugin
+      apt:
+        name:
+          - certbot
+          - python3-certbot-nginx
+        state: present
+        update_cache: yes
+
+    - name: Generate SSL certificate
+      command: >
+        certbot --nginx
+        -d grafana-gen.studentdumbways.my.id
+        --non-interactive
+        --agree-tos
+        -m gen@studentdumbways.my.id
+
+    - name: Check certbot auto renew (dry run)
+      command: certbot renew --dry-run

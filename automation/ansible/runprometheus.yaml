@@ -1,0 +1,16 @@
+- name: Run Prometheus container
+  hosts: monitoring
+  become: true
+  tasks:
+    - name: Run prometheus
+      community.docker.docker_container:
+        name: prometheus
+        image: prom/prometheus
+        state: started
+        restart_policy: always
+        ports:
+          - "9090:9090"
+        volumes:
+          - /opt/prometheus:/etc/prometheus
+        command: "--config.file=/etc/prometheus/prometheus.yml"
+

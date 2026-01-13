@@ -1,0 +1,14 @@
+- name: node exporter using docker
+  hosts: all
+  become: true
+  tasks:
+    - name: Run node exporter container
+      docker_container:
+        name: nodeexporter
+        image: prom/node-exporter
+        state: started
+        restart_policy: always
+        ports:
+          - "9100:9100"
+        command:
+          - "--web.listen-address=0.0.0.0:9100"

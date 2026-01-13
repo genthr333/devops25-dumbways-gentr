@@ -1,0 +1,28 @@
+- name: Run node exporter as service
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Create systemd service file
+      copy:
+        dest: /etc/systemd/system/node_exporter.service
+        content: |
+          [Unit]
+          Description=Node Exporter
+          After=network.target
+
+          [Service]
+          User=nobody
+          ExecStart=/usr/local/bin/node_exporter
+
+          [Install]
+          WantedBy=default.target
+
+    - name: Reload systemd
+      command: systemctl daemon-reexec
+
+    - name: Enable & start node exporter
+      service:
+        name: node_exporter
+        state: started
+        enabled: yes

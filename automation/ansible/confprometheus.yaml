@@ -1,0 +1,25 @@
+- name: Configure Prometheus
+  hosts: monitoring
+  become: true
+
+  tasks:
+    - name: Create prometheus config directory
+      file:
+        path: /opt/prometheus
+        state: directory
+        mode: '0755'
+
+    - name: Create prometheus config
+      copy:
+        dest: /opt/prometheus/prometheus.yml
+        content: |
+          global:
+            scrape_interval: 15s
+
+          scrape_configs:
+            - job_name: 'node'
+              static_configs:
+                - targets:
+                    - "103.103.23.200:9100"
+                    - "103.150.226.149:9100"
+
