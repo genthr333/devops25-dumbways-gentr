@@ -128,7 +128,7 @@ scrape_interval: 15s: Prometheus akan mengambil data metrik dari server setiap 1
 scrape_configs: Bagian ini mendefinisikan target monitoring.
 
 
-<p alig"center"> <img src="14.png" widthn=="700" alt="command"> </p>
+<p alig"center"> <img src="22.png" widthn=="700" alt="command"> </p>
 
 
 pastikan status target up.
@@ -140,25 +140,52 @@ pastikan status target up.
 ### langkah 1
 
 
-<p alig"center"> <img src="14.png" widthn=="700" alt="command"> </p>
+<p alig"center"> <img src="17.png" widthn=="700" alt="command"> </p>
 
 
 sama seperti instalasi sebelumnya ansible akan menarik image docker grafana/grafana, lalu run di port 3001.
 
 
-<p alig"center"> <img src="14.png" widthn=="700" alt="command"> </p>
+### langkah 2
+
+
+<p alig"center"> <img src="grafana.png" widthn=="700" alt="command"> </p>
 
 
 login menggunakan admin.
 
 
-<p alig"center"> <img src="14.png" widthn=="700" alt="command"> </p>
+### langkah 3
+
+
+<p alig"center"> <img src="grafana1.png" widthn=="700" alt="command"> </p>
 
 
 connect data source dari prometheus ke dalam grafana dengan memilih prometheus.
 
 
-<p alig"center"> <img src="14.png" widthn=="700" alt="command"> </p>
+### langkah 4
+
+
+<p alig"center"> <img src="monitoring.png" widthn=="700" alt="command"> </p>
 
 
 lalu buat dashboard di dalam grafana untuk monitoring, bisa juga import template.
+
+
+## buat reverse proxy menggunakan cloudflare ssl
+
+
+<p alig"center"> <img src="18.png" widthn=="700" alt="command"> </p>
+
+
+<p alig"center"> <img src="19.png" widthn=="700" alt="command"> </p>
+
+
+<p alig"center"> <img src="20.png" widthn=="700" alt="command"> </p>
+
+
+<p alig"center"> <img src="21.png" widthn=="700" alt="command"> </p>
+
+
+di sini saya menggunakan cloudflare untuk https.
