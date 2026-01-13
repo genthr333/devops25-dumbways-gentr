@@ -77,7 +77,7 @@ setelah selsai dengan setup kita akan melakukan test membuat playbook. playbook 
 
 
 <p align="center">
-  <img src="10.PNG" width="48%" />
+  <img src="10.png" width="48%" />
   <img src="11.png" width="48%" />
 </p>
 
@@ -92,7 +92,7 @@ kita akan coba menjalankan frontend di atas docker
 
 
 <p align="center">
-  <img src="12.PNG" width="48%" />
+  <img src="12.png" width="48%" />
   <img src="13.png" width="48%" />
 </p>
 
