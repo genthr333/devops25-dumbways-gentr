@@ -1,7 +1,7 @@
 # Day 2 CI/CD Jenkins
 
 
-## 1 install Jenkins dan Docker 
+## 1 install Jenkins and Docker 
 
 
 1
@@ -132,7 +132,7 @@ after completing the initial registration we install all necessary plugins to su
 </p>
 
 
-we add the github repository url to the jenkins project configuration to establish the connection between the source code and the automation server. after the setup is complete we perform several code changes and commits to trigger the pipeline and verify that the workflow runs correctly until the jenkins dashboard displays a successful build status for all stages.
+add the github repository url to the jenkins project configuration to establish the connection between the source code and the automation server. after the setup is complete we perform several code changes and commits to trigger the pipeline and verify that the workflow runs correctly until the jenkins dashboard displays a successful build status for all stages.
 
 
 <p align="center"> <img src="20.png" width="700" alt="command"> </p>
